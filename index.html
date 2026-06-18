@@ -9,161 +9,42 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{
-  background:#1c1d1f;
-  color:#d4b8f0;
-  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
-  min-height:100vh;
-  padding:56px 24px 100px;
-}
-
-/* ── Logo ── */
-.logo-wrap{display:flex;justify-content:center;margin-bottom:22px}
-
-/* ── Header ── */
+body{background:#1c1d1f;color:#d4b8f0;font-family:'Plus Jakarta Sans',system-ui,sans-serif;min-height:100vh;padding:56px 24px 100px}
+.logo-wrap{display:flex;justify-content:center;margin-bottom:18px}
 header{text-align:center;margin-bottom:64px}
-.header-box{
-  display:inline-block;
-  border:1.5px solid #B04FE5;
-  border-radius:8px;
-  padding:16px 36px;
-  margin-bottom:18px;
-}
-header h1{
-  font-size:18px;
-  font-weight:700;
-  letter-spacing:0.05em;
-  text-transform:uppercase;
-  color:#f0e6fa;
-  line-height:1.45;
-}
-header .sub{
-  font-size:11px;
-  letter-spacing:0.10em;
-  text-transform:uppercase;
-  color:#4a2d68;
-}
-
-/* ── Progress ── */
+.header-box{display:inline-block;border:1.5px solid #B04FE5;border-radius:8px;padding:16px 36px;margin-bottom:18px}
+header h1{font-size:18px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:#f0e6fa;line-height:1.45}
+header .sub{font-size:11px;letter-spacing:0.10em;text-transform:uppercase;color:#4a2d68}
 .prog-wrap{max-width:380px;margin:20px auto 0}
-.prog-label{
-  font-size:11px;
-  font-weight:600;
-  letter-spacing:0.07em;
-  text-transform:uppercase;
-  color:#7a4fa8;
-  margin-bottom:8px;
-}
+.prog-label{font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#7a4fa8;margin-bottom:8px}
 .prog-track{background:#251535;border-radius:4px;height:4px;overflow:hidden}
 .prog-fill{height:100%;background:#B04FE5;border-radius:4px;transition:width .6s ease}
-
-/* ── Timeline spine ── */
 .timeline{position:relative;max-width:720px;margin:0 auto}
-.timeline::before{
-  content:'';
-  position:absolute;
-  left:50%;top:0;bottom:0;
-  width:2px;
-  background:#2e1845;
-  transform:translateX(-50%);
-  z-index:0;
-}
-
-/* ── Step grid ── */
-.step{
-  display:grid;
-  grid-template-columns:1fr 60px 1fr;
-  align-items:start;
-  margin-bottom:48px;
-  position:relative;
-}
-
-/* Number bubble */
-.step-num{
-  grid-column:2;
-  width:42px;height:42px;
-  border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:15px;font-weight:700;
-  z-index:2;position:relative;
-  margin:0 auto;
-  transition:transform .2s;
-}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:#2e1845;transform:translateX(-50%);z-index:0}
+.step{display:grid;grid-template-columns:1fr 60px 1fr;align-items:start;margin-bottom:48px;position:relative}
+.step-num{grid-column:2;width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;z-index:2;position:relative;margin:0 auto;transition:transform .2s}
 .step:hover .step-num{transform:scale(1.1)}
-
-/* Card */
-.step-card{
-  border-radius:10px;
-  border:1px solid #2a1840;
-  position:relative;
-  cursor:default;
-  overflow:hidden;
-  transition:border-color .25s, box-shadow .25s;
-}
+.step-card{border-radius:10px;border:1px solid #2a1840;position:relative;cursor:default;overflow:hidden;transition:border-color .25s,box-shadow .25s}
 .step.right .step-card{grid-column:3}
-.step.left  .step-card{grid-column:1}
-
-/* Connector */
-.step-card::before{
-  content:'';position:absolute;
-  top:20px;width:20px;height:2px;
-  background:#2e1845;z-index:1;
-}
+.step.left .step-card{grid-column:1}
+.step-card::before{content:'';position:absolute;top:20px;width:20px;height:2px;background:#2e1845;z-index:1}
 .step.right .step-card::before{left:-20px}
-.step.left  .step-card::before{right:-20px}
-
-/* Always-visible area */
+.step.left .step-card::before{right:-20px}
 .card-top{padding:18px 20px}
-
-/* Hover-expand area */
-.card-more{
-  max-height:0;overflow:hidden;
-  padding:0 20px;
-  border-top:0px solid transparent;
-  transition:max-height .35s ease, padding .3s ease, border-color .3s;
-}
-.step:hover .card-more{
-  max-height:160px;
-  padding:12px 20px 18px;
-  border-top-width:1px;
-}
-
-.step-badge{
-  display:inline-block;
-  font-size:10px;font-weight:700;
-  letter-spacing:0.08em;text-transform:uppercase;
-  padding:3px 9px;border-radius:4px;
-  margin-bottom:10px;
-}
-.step-title{
-  font-size:12px;font-weight:700;
-  letter-spacing:0.09em;text-transform:uppercase;
-  margin-bottom:12px;line-height:1.4;
-}
+.card-more{max-height:0;overflow:hidden;padding:0 20px;border-top:0px solid transparent;transition:max-height .35s ease,padding .3s ease,border-color .3s}
+.step:hover .card-more{max-height:200px;padding:12px 20px 18px;border-top-width:1px}
+.step-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:3px 9px;border-radius:4px;margin-bottom:10px}
+.step-title{font-size:12px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;margin-bottom:12px;line-height:1.4}
 .step-items{list-style:none;display:flex;flex-direction:column;gap:5px}
-.step-items li{
-  font-size:12px;
-  display:flex;gap:0;line-height:1.55;
-}
+.step-items li{font-size:12px;display:flex;gap:0;line-height:1.55}
 .step-items li::before{content:'→ ';white-space:pre;flex-shrink:0}
-
 .step-note{font-size:12px;font-style:italic;line-height:1.65}
-
-/* Hover prompt */
-.hover-prompt{
-  position:absolute;bottom:9px;right:12px;
-  font-size:10px;letter-spacing:0.04em;
-  transition:opacity .2s;
-  pointer-events:none;
-}
+.hover-prompt{position:absolute;bottom:9px;right:12px;font-size:10px;letter-spacing:0.04em;transition:opacity .2s;pointer-events:none}
 .step:hover .hover-prompt{opacity:0}
-
-/* ═══ STATUS: not-started ═══ */
 .step.ns .step-num{background:#1c1d1f;border:2px solid #3a2050;color:#5c4070}
 .step.ns .step-card{background:#1a1225;border-color:#2a1840}
 .step.ns:hover .step-card{border-color:#4a2568;box-shadow:0 0 0 3px rgba(176,79,229,.05)}
 .step.ns .step-card::before{background:#2e1845}
-.step.ns .step-card::after{content:'';display:none}
 .step.ns .card-more{border-color:#3a2050}
 .step.ns .step-title{color:#5c4070}
 .step.ns .step-badge{background:#1f1235;color:#5c4070;border:1px solid #3a2050}
@@ -171,12 +52,7 @@ header .sub{
 .step.ns .step-items li::before{color:#3a2050}
 .step.ns .step-note{color:#5c4070}
 .step.ns .hover-prompt{color:#3a2050}
-
-/* ═══ STATUS: in-progress ═══ */
-.step.ip .step-num{
-  background:#2d1050;border:2px solid #B04FE5;color:#B04FE5;
-  box-shadow:0 0 0 5px rgba(176,79,229,.12);
-}
+.step.ip .step-num{background:#2d1050;border:2px solid #B04FE5;color:#B04FE5;box-shadow:0 0 0 5px rgba(176,79,229,.12)}
 .step.ip .step-card{background:#1e1030;border-color:#6b2d9a}
 .step.ip:hover .step-card{border-color:#B04FE5;box-shadow:0 0 0 3px rgba(176,79,229,.12)}
 .step.ip .step-card::before{background:#6b2d9a}
@@ -187,8 +63,6 @@ header .sub{
 .step.ip .step-items li::before{color:#7d33a8}
 .step.ip .step-note{color:#9b60c8}
 .step.ip .hover-prompt{color:#6b2d9a}
-
-/* ═══ STATUS: done ═══ */
 .step.done .step-num{background:#0d2a18;border:2px solid #22c55e;color:#4ade80}
 .step.done .step-card{background:#0a1e12;border-color:#166534}
 .step.done:hover .step-card{border-color:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.08)}
@@ -200,161 +74,67 @@ header .sub{
 .step.done .step-items li::before{content:'✓ ';color:#16a34a}
 .step.done .step-note{color:#2a6040}
 .step.done .hover-prompt{color:#166534}
-
-/* ── Legend ── */
 .legend{display:flex;justify-content:center;gap:24px;margin-top:52px;flex-wrap:wrap}
 .legend-item{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5c4070}
 .legend-dot{width:10px;height:10px;border-radius:50%;border:2px solid}
 .legend-dot.ns{border-color:#3a2050;background:#1c1d1f}
 .legend-dot.ip{border-color:#B04FE5;background:#2d1050}
 .legend-dot.done{border-color:#22c55e;background:#0d2a18}
-
-/* ── Footer ── */
 .footer{text-align:center;margin-top:36px;font-size:11px;letter-spacing:.05em;color:#2e1845}
-
-/* ── Mobile ── */
 @media(max-width:580px){
-  .timeline::before{left:21px}
-  .step{display:flex;flex-direction:column;padding-left:54px;margin-bottom:36px}
-  .step-num{position:absolute;left:0;top:0;margin:0;width:38px;height:38px;font-size:13px}
-  .step-card{width:100%}
-  .step-card::before{display:none}
-  .legend{gap:16px}
+.timeline::before{left:21px}
+.step{display:flex;flex-direction:column;padding-left:54px;margin-bottom:36px}
+.step-num{position:absolute;left:0;top:0;margin:0;width:38px;height:38px;font-size:13px}
+.step-card{width:100%}
+.step-card::before{display:none}
+.legend{gap:16px}
 }
 </style>
 </head>
 <body>
-
-<!-- Logo -->
 <div class="logo-wrap">
-  <svg viewBox="0 0 160 160" width="68" height="68" xmlns="http://www.w3.org/2000/svg">
-    <rect width="160" height="160" rx="24" fill="#0a0a0a"/>
-    <defs>
-      <path id="H" d="M50,90 L35,90
-        C30,80 28,70 30,60
-        C32,50 28,43 25,37
-        C22,30 23,22 28,16
-        C33,10 40,7 48,7
-        C56,7 63,10 68,15
-        C73,20 74,27 72,34
-        C70,41 65,47 63,54
-        C61,61 61,68 61,75
-        C61,81 59,86 57,90 Z"/>
-    </defs>
-    <!-- outer white head -->
-    <use href="#H" fill="#ffffff"   transform="translate(5,10)  scale(1.30)"/>
-    <!-- middle dark head -->
-    <use href="#H" fill="#0a0a0a"   transform="translate(22,20) scale(0.97)"/>
-    <!-- inner white head -->
-    <use href="#H" fill="#ffffff"   transform="translate(37,30) scale(0.66)"/>
-  </svg>
+<svg viewBox="0 0 160 160" width="100" height="100" xmlns="http://www.w3.org/2000/svg">
+<defs><path id="H" d="M50,90 L35,90 C30,80 28,70 30,60 C32,50 28,43 25,37 C22,30 23,22 28,16 C33,10 40,7 48,7 C56,7 63,10 68,15 C73,20 74,27 72,34 C70,41 65,47 63,54 C61,61 61,68 61,75 C61,81 59,86 57,90 Z"/></defs>
+<use href="#H" fill="#ffffff" transform="translate(5,10) scale(1.30)"/>
+<use href="#H" fill="#1c1d1f" transform="translate(22,20) scale(0.97)"/>
+<use href="#H" fill="#ffffff" transform="translate(37,30) scale(0.66)"/>
+</svg>
 </div>
-
 <header>
-  <div class="header-box">
-    <h1>New positioning<br>launch execution plan</h1>
-  </div>
-  <p class="sub">AchievR · Build After Work</p>
-  <div class="prog-wrap">
-    <div class="prog-label" id="prog-label">0% complete</div>
-    <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
-  </div>
-</header>
-
-<div class="timeline" id="roadmap"></div>
-
-<div class="legend">
-  <div class="legend-item"><div class="legend-dot ns"></div>Not started</div>
-  <div class="legend-item"><div class="legend-dot ip"></div>In progress</div>
-  <div class="legend-item"><div class="legend-dot done"></div>Done</div>
+<div class="header-box"><h1>New positioning<br>launch execution plan</h1></div>
+<p class="sub">AchievR · Build After Work</p>
+<div class="prog-wrap">
+<div class="prog-label" id="prog-label">0% complete</div>
+<div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
 </div>
-
+</header>
+<div class="timeline" id="roadmap"></div>
+<div class="legend">
+<div class="legend-item"><div class="legend-dot ns"></div>Not started</div>
+<div class="legend-item"><div class="legend-dot ip"></div>In progress</div>
+<div class="legend-item"><div class="legend-dot done"></div>Done</div>
+</div>
 <p class="footer">news.achievr.co · updated as launch progresses</p>
-
 <script>
-/* ═══════════════════════════════════════════════════════
-   EDIT STATUS TO UPDATE PROGRESS
-   "ns" = not started  |  "ip" = in progress  |  "done"
-   note = shown on hover
-═══════════════════════════════════════════════════════ */
-const STEPS = [
-  {
-    id: 1, side: "right", status: "ip",
-    title: "Change all pages",
-    items: [
-      "Landing page and bio",
-      "Welcome post and about page",
-      "Welcome email — free and paid"
-    ],
-    note: "First touchpoint for every reader. Has to match the new positioning from day one."
-  },
-  {
-    id: 2, side: "left", status: "ns",
-    title: "Update resource library — paths",
-    items: [
-      "Cut what doesn't fit anymore",
-      "Activate all 5 content paths"
-    ],
-    note: "Identity → Systems → Consistency → Output → Monetization. Everything reorganised around these 5."
-  },
-  {
-    id: 3, side: "right", status: "ns",
-    title: "Preparing posts",
-    items: [
-      "5 posts in the queue before relaunch",
-      "No slipping off the schedule again"
-    ],
-    note: "The buffer that makes consistency actually possible. One bad week without a queue kills momentum."
-  },
-  {
-    id: 4, side: "left", status: "ns",
-    title: "Sequences",
-    items: [
-      "Announce the relaunch",
-      "Explain what changed and why"
-    ],
-    note: "Existing subs need to know why things look different — before new readers arrive to a confusing inbox."
-  },
-  {
-    id: 5, side: "right", status: "ns",
-    title: "Builder identity install",
-    items: [
-      "Start building Product 1",
-      "14-day workbook + audio, $37–47"
-    ],
-    note: "Dissolves employee-mindset before any system is taught. Identity first — that's the whole thesis."
-  }
+const STEPS=[
+{id:1,side:"right",status:"done",title:"Resource library remade",items:["All pages updated to match new positioning","Mini-journeys added for each pillar","Welcome email updated — free and paid"],note:"Mini-journeys are curated sequences of posts — one per pillar — that walk you through the core ideas in the right order. No scrolling through everything. Just a clear, guided path from where you are to where you want to be."},
+{id:2,side:"left",status:"done",title:"We're back",items:["Fresh ideas, clear head","One focus: building after work"],note:"Strong focus on one thing and one thing only — building after work. No more drifting. The positioning is locked and the content follows from it."},
+{id:3,side:"right",status:"ip",title:"First post after break",items:["Dropping June 25th","Back on schedule from here"],note:"First post back after the break. June 25th. From this point on, the schedule holds."},
+{id:4,side:"left",status:"ns",title:"Sequences",items:["Announce the relaunch","Explain what changed and why"],note:"Existing subs need to know why things look different — before new readers arrive to a confusing inbox."},
+{id:5,side:"right",status:"ns",title:"Builder identity install",items:["Start building Product 1","14-day workbook + audio, $37–47"],note:"Dissolves employee-mindset before any system is taught. Identity first — that's the whole thesis."}
 ];
-/* ═══════════════════════════════════════════════════════ */
-
-const BADGE = { ns:"Not started", ip:"In progress", done:"Done" };
-const container = document.getElementById('roadmap');
-
-const doneCount = STEPS.filter(s => s.status === 'done').length;
-const ipCount   = STEPS.filter(s => s.status === 'ip').length;
-const pct = Math.round(doneCount / STEPS.length * 100);
-document.getElementById('prog-fill').style.width = pct + '%';
-document.getElementById('prog-label').textContent =
-  pct + '% complete' + (ipCount ? ' · ' + ipCount + ' in progress' : '');
-
-STEPS.forEach(s => {
-  const div = document.createElement('div');
-  div.className = `step ${s.side} ${s.status}`;
-  div.innerHTML = `
-    <div class="step-num">${s.id}</div>
-    <div class="step-card">
-      <div class="card-top">
-        <div class="step-badge">${BADGE[s.status]}</div>
-        <div class="step-title">${s.title}</div>
-        <ul class="step-items">${s.items.map(i=>`<li>${i}</li>`).join('')}</ul>
-      </div>
-      <div class="card-more">
-        <p class="step-note">${s.note}</p>
-      </div>
-      <span class="hover-prompt">↓ why this matters</span>
-    </div>
-  `;
-  container.appendChild(div);
+const BADGE={ns:"Not started",ip:"In progress",done:"Done"};
+const container=document.getElementById('roadmap');
+const doneCount=STEPS.filter(s=>s.status==='done').length;
+const ipCount=STEPS.filter(s=>s.status==='ip').length;
+const pct=Math.round(doneCount/STEPS.length*100);
+document.getElementById('prog-fill').style.width=pct+'%';
+document.getElementById('prog-label').textContent=pct+'% complete'+(ipCount?' · '+ipCount+' in progress':'');
+STEPS.forEach(s=>{
+const div=document.createElement('div');
+div.className=`step ${s.side} ${s.status}`;
+div.innerHTML=`<div class="step-num">${s.id}</div><div class="step-card"><div class="card-top"><div class="step-badge">${BADGE[s.status]}</div><div class="step-title">${s.title}</div><ul class="step-items">${s.items.map(i=>`<li>${i}</li>`).join('')}</ul></div><div class="card-more"><p class="step-note">${s.note}</p></div><span class="hover-prompt">↓ why this matters</span></div>`;
+container.appendChild(div);
 });
 </script>
 </body>
