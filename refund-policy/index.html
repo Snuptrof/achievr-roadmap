@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AchievR — Refund Policy</title>
+<meta name="description" content="AchievR refund policy: 30-day money-back guarantee on digital products.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+  background:#1c1d1f;
+  color:#d4b8f0;
+  font-family:'Plus Jakarta Sans',system-ui,sans-serif;
+  min-height:100vh;
+  padding:56px 24px 100px;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ── Logo ── */
+.logo-wrap{display:flex;justify-content:center;margin-bottom:18px}
+.logo-wrap img{width:100px;height:auto;display:block}
+
+/* ── Header ── */
+header{text-align:center;margin-bottom:56px}
+.header-box{
+  display:inline-block;
+  border:1.5px solid #B04FE5;
+  border-radius:8px;
+  padding:16px 36px;
+  margin-bottom:18px;
+}
+header h1{
+  font-size:18px;
+  font-weight:700;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:#f0e6fa;
+  line-height:1.45;
+}
+header .sub{
+  font-size:11px;
+  letter-spacing:0.10em;
+  text-transform:uppercase;
+  color:#4a2d68;
+}
+
+/* ── Guarantee banner ── */
+.guarantee{
+  max-width:520px;
+  margin:26px auto 0;
+  text-align:center;
+}
+.guarantee-label{
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.07em;
+  text-transform:uppercase;
+  color:#7a4fa8;
+  margin-bottom:10px;
+}
+.guarantee-bar{
+  height:3px;
+  border-radius:2px;
+  background:linear-gradient(90deg,#22c55e,#B04FE5);
+}
+
+/* ── Cards ── */
+.card{
+  border:1px solid;
+  border-radius:8px;
+  padding:22px 24px;
+  margin-bottom:20px;
+}
+.card-badge{
+  display:inline-block;
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  padding:3px 9px;
+  border-radius:4px;
+  margin-bottom:12px;
+}
+.card h2{
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  margin-bottom:14px;
+  line-height:1.4;
+}
+.card p{
+  font-size:13.5px;
+  line-height:1.75;
+  margin-bottom:12px;
+}
+.card p:last-child{margin-bottom:0}
+
+.items{list-style:none;margin:0 0 4px}
+.items li{
+  font-size:13.5px;
+  line-height:1.7;
+  padding-left:20px;
+  position:relative;
+  margin-bottom:9px;
+}
+.items li::before{
+  content:'\2713';
+  position:absolute;
+  left:0;
+  font-weight:700;
+}
+
+/* ═══ Green card (the guarantee) ═══ */
+.card.yes{background:#0a1e12;border-color:#166534}
+.card.yes .card-badge{background:#0d2a18;color:#4ade80;border:1px solid #166534}
+.card.yes h2{color:#4ade80}
+.card.yes p{color:#8fd0a8}
+.card.yes .items li{color:#8fd0a8}
+.card.yes .items li::before{color:#22c55e}
+.card.yes strong{color:#dcfce7;font-weight:700}
+
+/* ═══ Purple card (subscription) ═══ */
+.card.sub{background:#1e1030;border-color:#6b2d9a}
+.card.sub .card-badge{background:#2d1050;color:#B04FE5;border:1px solid #7d33a8}
+.card.sub h2{color:#c97af0}
+.card.sub p{color:#9b60c8}
+.card.sub .items li{color:#9060b0}
+.card.sub .items li::before{color:#7d33a8}
+.card.sub strong{color:#f0e6fa;font-weight:700}
+
+/* ═══ Muted card (fine print) ═══ */
+.card.fine{background:#1a1225;border-color:#2a1840}
+.card.fine .card-badge{background:#1f1235;color:#5c4070;border:1px solid #3a2050}
+.card.fine h2{color:#5c4070}
+.card.fine p{color:#7d5a99;font-size:12.5px;line-height:1.7}
+.card.fine .items li{color:#7d5a99;font-size:12.5px}
+.card.fine .items li::before{color:#3a2050}
+.card.fine strong{color:#9060b0;font-weight:700}
+
+/* ── Steps ── */
+.steps-head{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.09em;
+  text-transform:uppercase;
+  color:#7a4fa8;
+  margin:38px 0 22px;
+  text-align:center;
+}
+.step{
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  margin-bottom:18px;
+}
+.step-num{
+  flex:0 0 auto;
+  width:34px;height:34px;
+  border-radius:50%;
+  background:#2d1050;
+  border:2px solid #B04FE5;
+  color:#B04FE5;
+  font-size:12px;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 0 5px rgba(176,79,229,.10);
+}
+.step-body{padding-top:6px}
+.step-title{
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  color:#c97af0;
+  margin-bottom:5px;
+}
+.step-body p{
+  font-size:13.5px;
+  line-height:1.7;
+  color:#9b60c8;
+}
+
+/* ── Email highlight ── */
+.email{
+  color:#f0e6fa;
+  font-weight:700;
+  border-bottom:1px solid #B04FE5;
+  text-decoration:none;
+  white-space:nowrap;
+}
+.email:hover{color:#B04FE5}
+
+.placeholder{
+  background:#3a1010;
+  border:1px dashed #ef4444;
+  border-radius:4px;
+  padding:1px 7px;
+  color:#fca5a5;
+  font-weight:700;
+  font-size:12.5px;
+  white-space:nowrap;
+}
+
+/* ── Footer ── */
+.footer{
+  text-align:center;
+  margin-top:44px;
+  font-size:11px;
+  letter-spacing:.05em;
+  color:#4a2d68;
+  line-height:1.9;
+}
+.footer a{color:#7a4fa8;text-decoration:none}
+.footer a:hover{color:#7a4fa8}
+
+@media(max-width:580px){
+  body{padding:40px 18px 70px}
+  .header-box{padding:14px 22px}
+  header h1{font-size:16px}
+  .card{padding:18px 18px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="logo-wrap">
+    <img src="https://roadmap.achievr.co/logo%20refreshed%20no%20bg.png" alt="AchievR">
+  </div>
+
+  <header>
+    <div class="header-box">
+      <h1>Refund Policy</h1>
+    </div>
+    <div class="sub">ACHIEVR · BUILD AFTER WORK</div>
+
+    <div class="guarantee">
+      <div class="guarantee-label">30-DAY MONEY-BACK GUARANTEE · NO QUESTIONS ASKED</div>
+      <div class="guarantee-bar"></div>
+    </div>
+  </header>
+
+  <div class="card yes">
+    <span class="card-badge">Digital products</span>
+    <h2>30 days, full refund, no reason required</h2>
+    <p>Every digital product sold by AchievR — guides, templates, systems, workbooks — is covered by a <strong>30-day money-back guarantee</strong> from the date of purchase.</p>
+    <ul class="items">
+      <li>You don't have to explain why.</li>
+      <li>You don't have to prove you tried it.</li>
+      <li>You don't have to fill in a form.</li>
+    </ul>
+    <p>One email is enough. If the thing didn't help you build what you came here to build, you shouldn't be paying for it.</p>
+  </div>
+
+  <div class="card sub">
+    <span class="card-badge">Paid newsletter</span>
+    <h2>Cancel anytime, keep what you paid for</h2>
+    <p>Paid subscriptions to <strong>Build After Work</strong> can be cancelled at any time, from your own account settings. No email needed, no retention call, no dark patterns.</p>
+    <ul class="items">
+      <li>Cancelling stops all future billing immediately.</li>
+      <li>You keep full access until the end of the period you already paid for.</li>
+      <li>Part-used months and years aren't refunded — you keep the access instead.</li>
+    </ul>
+    <p>If you were charged for a renewal you genuinely didn't want and you get in touch within <strong>14 days</strong> of that charge, email me and I'll refund it.</p>
+  </div>
+
+  <div class="steps-head">How to request a refund</div>
+
+  <div class="step">
+    <div class="step-num">1</div>
+    <div class="step-body">
+      <div class="step-title">Email me</div>
+      <p>Send a message to <span class="placeholder">REPLACE WITH YOUR SUPPORT EMAIL</span> from the address you bought with, or just reply to your receipt.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">2</div>
+    <div class="step-body">
+      <div class="step-title">Say what you bought</div>
+      <p>The product name is enough. No reason, no justification, no essay.</p>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="step-num">3</div>
+    <div class="step-body">
+      <div class="step-title">Get your money back</div>
+      <p>Refunds are issued within <strong style="color:#f0e6fa">5 business days</strong>, back to the original payment method. Your bank may take another 5–10 days to show it — that part is out of my hands.</p>
+    </div>
+  </div>
+
+  <div class="card fine" style="margin-top:34px">
+    <span class="card-badge">The fine print</span>
+    <h2>Short, and in plain language</h2>
+    <ul class="items">
+      <li>Access to a refunded product is removed once the refund is issued. Please delete any downloaded copies.</li>
+      <li>Refunded products can't be re-bought at a later date without agreement.</li>
+      <li>I reserve the right to decline repeat refund requests from the same buyer, or refunds requested in obvious bad faith.</li>
+      <li>Nothing here is physical, so there are no returns or exchanges — only refunds.</li>
+    </ul>
+    <p style="margin-top:14px">If you are a consumer in the EU or UK, this policy is offered <strong>in addition to</strong> your statutory rights, including your statutory right of withdrawal. Nothing on this page limits those rights.</p>
+  </div>
+
+  <div class="footer">
+    <a href="https://news.achievr.co">news.achievr.co</a><br>
+    Last updated 30 August 2026
+  </div>
+
+</div>
+</body>
+</html>
