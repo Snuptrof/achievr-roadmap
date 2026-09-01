@@ -17,12 +17,8 @@ body{
   min-height:100vh;
   padding:56px 24px 100px;
 }
-
-/* ── Logo ── */
 .logo-wrap{display:flex;justify-content:center;margin-bottom:18px}
 .logo-wrap img{width:100px;height:auto;display:block}
-
-/* ── Header ── */
 header{text-align:center;margin-bottom:64px}
 .header-box{
   display:inline-block;
@@ -45,8 +41,6 @@ header .sub{
   text-transform:uppercase;
   color:#4a2d68;
 }
-
-/* ── Progress ── */
 .prog-wrap{max-width:380px;margin:20px auto 0}
 .prog-label{
   font-size:11px;
@@ -58,8 +52,6 @@ header .sub{
 }
 .prog-track{background:#251535;border-radius:4px;height:4px;overflow:hidden}
 .prog-fill{height:100%;background:#B04FE5;border-radius:4px;transition:width .6s ease}
-
-/* ── Timeline spine ── */
 .timeline{position:relative;max-width:720px;margin:0 auto}
 .timeline::before{
   content:'';
@@ -70,8 +62,6 @@ header .sub{
   transform:translateX(-50%);
   z-index:0;
 }
-
-/* ── Step grid ── */
 .step{
   display:grid;
   grid-template-columns:1fr 60px 1fr;
@@ -79,8 +69,6 @@ header .sub{
   margin-bottom:48px;
   position:relative;
 }
-
-/* Number bubble */
 .step-num{
   grid-column:2;
   width:42px;height:42px;
@@ -92,8 +80,6 @@ header .sub{
   transition:transform .2s;
 }
 .step:hover .step-num{transform:scale(1.1)}
-
-/* Card */
 .step-card{
   border-radius:10px;
   border:1px solid #2a1840;
@@ -104,8 +90,6 @@ header .sub{
 }
 .step.right .step-card{grid-column:3}
 .step.left  .step-card{grid-column:1}
-
-/* Connector */
 .step-card::before{
   content:'';position:absolute;
   top:20px;width:20px;height:2px;
@@ -113,11 +97,7 @@ header .sub{
 }
 .step.right .step-card::before{left:-20px}
 .step.left  .step-card::before{right:-20px}
-
-/* Always-visible area */
 .card-top{padding:18px 20px}
-
-/* Hover-expand area */
 .card-more{
   max-height:0;overflow:hidden;
   padding:0 20px;
@@ -129,7 +109,6 @@ header .sub{
   padding:12px 20px 18px;
   border-top-width:1px;
 }
-
 .step-badge{
   display:inline-block;
   font-size:10px;font-weight:700;
@@ -148,10 +127,7 @@ header .sub{
   display:flex;gap:0;line-height:1.55;
 }
 .step-items li::before{content:'→ ';white-space:pre;flex-shrink:0}
-
 .step-note{font-size:12px;font-style:italic;line-height:1.65}
-
-/* Hover prompt */
 .hover-prompt{
   position:absolute;bottom:9px;right:12px;
   font-size:10px;letter-spacing:0.04em;
@@ -159,13 +135,10 @@ header .sub{
   pointer-events:none;
 }
 .step:hover .hover-prompt{opacity:0}
-
-/* ═══ STATUS: not-started ═══ */
 .step.ns .step-num{background:#1c1d1f;border:2px solid #3a2050;color:#5c4070}
 .step.ns .step-card{background:#1a1225;border-color:#2a1840}
 .step.ns:hover .step-card{border-color:#4a2568;box-shadow:0 0 0 3px rgba(176,79,229,.05)}
 .step.ns .step-card::before{background:#2e1845}
-.step.ns .step-card::after{content:'';display:none}
 .step.ns .card-more{border-color:#3a2050}
 .step.ns .step-title{color:#5c4070}
 .step.ns .step-badge{background:#1f1235;color:#5c4070;border:1px solid #3a2050}
@@ -173,8 +146,6 @@ header .sub{
 .step.ns .step-items li::before{color:#3a2050}
 .step.ns .step-note{color:#5c4070}
 .step.ns .hover-prompt{color:#3a2050}
-
-/* ═══ STATUS: in-progress ═══ */
 .step.ip .step-num{
   background:#2d1050;border:2px solid #B04FE5;color:#B04FE5;
   box-shadow:0 0 0 5px rgba(176,79,229,.12);
@@ -189,8 +160,6 @@ header .sub{
 .step.ip .step-items li::before{color:#7d33a8}
 .step.ip .step-note{color:#9b60c8}
 .step.ip .hover-prompt{color:#6b2d9a}
-
-/* ═══ STATUS: done ═══ */
 .step.done .step-num{background:#0d2a18;border:2px solid #22c55e;color:#4ade80}
 .step.done .step-card{background:#0a1e12;border-color:#166534}
 .step.done:hover .step-card{border-color:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.08)}
@@ -202,19 +171,13 @@ header .sub{
 .step.done .step-items li::before{content:'✓ ';color:#16a34a}
 .step.done .step-note{color:#2a6040}
 .step.done .hover-prompt{color:#166534}
-
-/* ── Legend ── */
 .legend{display:flex;justify-content:center;gap:24px;margin-top:52px;flex-wrap:wrap}
 .legend-item{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:#5c4070}
 .legend-dot{width:10px;height:10px;border-radius:50%;border:2px solid}
 .legend-dot.ns{border-color:#3a2050;background:#1c1d1f}
 .legend-dot.ip{border-color:#B04FE5;background:#2d1050}
 .legend-dot.done{border-color:#22c55e;background:#0d2a18}
-
-/* ── Footer ── */
 .footer{text-align:center;margin-top:36px;font-size:11px;letter-spacing:.05em;color:#2e1845}
-
-/* ── Mobile ── */
 @media(max-width:580px){
   .timeline::before{left:21px}
   .step{display:flex;flex-direction:column;padding-left:54px;margin-bottom:36px}
@@ -226,12 +189,9 @@ header .sub{
 </style>
 </head>
 <body>
-
-<!-- Logo -->
 <div class="logo-wrap">
   <img src="logo%20refreshed%20no%20bg.png" alt="AchievR" width="100">
 </div>
-
 <header>
   <div class="header-box">
     <h1>New positioning<br>launch execution plan</h1>
@@ -242,36 +202,17 @@ header .sub{
     <div class="prog-track"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div>
   </div>
 </header>
-
 <div class="timeline" id="roadmap"></div>
-
 <div class="legend">
   <div class="legend-item"><div class="legend-dot ns"></div>Not started</div>
   <div class="legend-item"><div class="legend-dot ip"></div>In progress</div>
   <div class="legend-item"><div class="legend-dot done"></div>Done</div>
 </div>
-
 <p class="footer">news.achievr.co · updated as launch progresses</p>
-
 <script>
-/* ═══════════════════════════════════════════════════════
-   EDIT STATUS TO UPDATE PROGRESS
-   "ns" = not started  |  "ip" = in progress  |  "done"
-   note = shown on hover
-═══════════════════════════════════════════════════════ */
 const STEPS = [
   {
     id: 1, side: "right", status: "done",
-    title: "Your reading hub, rebuilt",
-    items: [
-      "Guided paths through every pillar — no digging",
-      "Start anywhere, follow the sequence, get results",
-      "New subscriber experience fully updated"
-    ],
-    note: "Instead of dumping you into 200+ posts and wishing you luck — each pillar now has its own sequence. You pick where you are, follow the path, skip what doesn't apply. Built for people with limited time who still want to get somewhere."
-  },
-  {
-    id: 2, side: "left", status: "done",
     title: "Sunday Review Deep Dive",
     items: [
       "Dropped August 27th",
@@ -281,21 +222,23 @@ const STEPS = [
     note: "Not just a summary. A full breakdown of one concept per issue, plus something you can actually use — a template, a checklist, a framework. Paid subscribers get the deliverable. Free subscribers get the thinking."
   },
   {
-    id: 3, side: "right", status: "ip",
-    title: "Next issue",
+    id: 2, side: "left", status: "ip",
+    title: "The Graveyard — Sep 3",
     items: [
-      "Coming September 3rd"
+      "Your five dead projects. Write them out."
     ],
-    note: ""
+    note: "To succeed, you need to fail first."
   },
   {
-    id: 4, side: "left", status: "ns",
+    id: 3, side: "right", status: "ip",
     title: "Identity Install",
-    items: [],
-    note: ""
+    items: [
+      "Sep 6 — Beta tests start, paid subs first"
+    ],
+    note: "The reason systems don't stick isn't discipline, it's identity."
   },
   {
-    id: 5, side: "right", status: "ip",
+    id: 4, side: "left", status: "ip",
     title: "Testing new email software & Writing, writing, writing...",
     items: [
       "Moving to new email software — more possibilities ahead",
@@ -305,18 +248,15 @@ const STEPS = [
     note: "The behind-the-scenes stuff nobody sees: testing platforms, batching content, making sure the engine runs before things get busy. You'll feel the difference in your inbox."
   }
 ];
-/* ═══════════════════════════════════════════════════════ */
 
 const BADGE = { ns:"Not started", ip:"In progress", done:"Done" };
 const container = document.getElementById('roadmap');
-
 const doneCount = STEPS.filter(s => s.status === 'done').length;
 const ipCount   = STEPS.filter(s => s.status === 'ip').length;
 const pct = Math.round(doneCount / STEPS.length * 100);
 document.getElementById('prog-fill').style.width = pct + '%';
 document.getElementById('prog-label').textContent =
   pct + '% complete' + (ipCount ? ' · ' + ipCount + ' in progress' : '');
-
 STEPS.forEach(s => {
   const div = document.createElement('div');
   div.className = `step ${s.side} ${s.status}`;
